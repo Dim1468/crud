@@ -3,15 +3,12 @@ from .models import Product, Stock, StockProduct
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    class ProductSerializer(serializers.ModelSerializer):
-        class Meta:
-            model = Product
-            fields = ['id', 'title', 'description']
+    class Meta:
+        model = Product
+        fields = ['id', 'title', 'description']
 
 
 class ProductPositionSerializer(serializers.ModelSerializer):
-    positions = StockProduct
-
     class Meta:
         model = StockProduct
         fields = ['product', 'quantity', 'price']
